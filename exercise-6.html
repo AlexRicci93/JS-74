@@ -1,0 +1,56 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's Form</h2>
+      <form id="person-form">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  
+
+let personform = document.getElementById('person-form');
+let button = document.querySelector('button');
+
+let input1 = document.createElement('input');
+let input2 = document.createElement('input');
+let input3 = document.createElement('input');
+
+
+
+input1.setAttribute('type', 'text');
+input2.setAttribute('type', 'text');
+input3.setAttribute('type', 'text');
+
+input1.setAttribute('value','Gino');
+input2.setAttribute('value','Sassi');
+input3.setAttribute('value', '34');
+
+
+window.onload = function initform() {
+
+  personform.append(input1);
+  personform.append(input2);
+  personform.append(input3);
+
+}
+
+button.onclick = function submitPersonForm(event){
+  event.preventDefault();
+  let person = {
+    'First-name': input1.value,
+    'Last-name': input2.value,
+    'Age': input3.value,
+
+  }
+  console.log(person);
+}  
+
+
+
+
+
+</script>
